@@ -79,7 +79,7 @@ export class AdminCyclesComponent implements OnInit {
     };
   }
 
-  private createCycle(form: FormGroup) {
+  createCycle(form: FormGroup) {
     console.log(form.value);
     if ( form.valid ) {
       this.cycleService.createCycle(form.value).subscribe(
@@ -117,11 +117,11 @@ export class AdminCyclesComponent implements OnInit {
     }
   }
 
-  private initFormCycle(form: NgForm) {
+  initFormCycle(form: NgForm) {
     form.resetForm();
   }
 
-  private isAdmin(): boolean {
+  isAdmin(): boolean {
     return this.authenticationService.isAdmin();
 
   }

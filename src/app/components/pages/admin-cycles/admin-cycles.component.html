@@ -1,21 +1,20 @@
 <div class="admin-cycles">
   <div class="admin-cycles__title">
     <h2>Liste des cycles de commandes</h2>
-
-    <button hasPermissions="['can_create_cycle']" myModalOpen="create cycle"
+    <button hasPermissions="['can_create_cycle']" appMyModalOpen="create cycle"
             class="button button--success">
       Créer un cycle
     </button>
   </div>
 
-  <my-modal name="create cycle"
-            title="Création d'un cycle"
-            button2Label="Créer"
-            (button1)="cycleForm.reset()"
-            (button2)="createCycle(cycleForm)"
-            typeModal="form"
-            button2Style="button--success">
-
+  <app-my-modal name="create cycle"
+                title="Création d'un cycle"
+                button2Label="Créer"
+                (button1)="cycleForm.reset()"
+                (button2)="createCycle(cycleForm)"
+                typeModal="form"
+                button2Style="button--success">
+    
     <form [formGroup]="cycleForm">
       <div class="form-group">
         <label for="name" class="form-label">Name: </label>
@@ -40,7 +39,7 @@
              *ngIf="cycleForm.controls['end_date'].hasError('dateEndBeforeDateStart')">La date de fin doit etre dans le futur</div>
       </div>
     </form>
-  </my-modal>
+  </app-my-modal>
 
   <table class="table admin-cycles__table" style="width: 100%">
     <tr>
