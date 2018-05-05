@@ -1,7 +1,6 @@
 <div class="admin-cycles">
   <div class="admin-cycles__title">
     <h2>Liste des cycles de commandes</h2>
-
     <button hasPermissions="['can_create_cycle']" appMyModalOpen="create cycle"
             class="button button--success">
       Créer un cycle
@@ -15,7 +14,7 @@
                 (button2)="createCycle(cycleForm)"
                 typeModal="form"
                 button2Style="button--success">
-
+    
     <form [formGroup]="cycleForm">
       <div class="form-group">
         <label for="name" class="form-label">Name: </label>
