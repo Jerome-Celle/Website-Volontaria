@@ -1,7 +1,47 @@
 <div class="admin-cells">
-  <h2>Liste des cellules</h2>
+  <div class="admin-cells__title">
+    <h2>Liste des cellules</h2>
+    <button hasPermissions="['can_create_cell']" appMyModalOpen="create cell"
+            class="button button--success">
+      Créer une cellule
+    </button>
+  </div>
 
-  <table class="table" style="width: 100%">
+  <app-my-modal name="create cell"
+                title="Création d'une cellue"
+                button2Label="Créer"
+                (button1)="cellForm.reset()"
+                (button2)="createCell()"
+                typeModal="form"
+                button2Style="button--success">
+
+    <form [formGroup]="cellForm">
+
+      <div class="form-group">
+        <label for="name" class="form-label">Nom de la cellule:</label>
+        <input class="input" formControlName="name" id="name" autofocus>
+        <div *ngIf="cellForm.controls['name'].hasError('required')"
+             class="form-text form-text--right form-text--danger">Le nom de la cellule est obligatoire.
+        </div>
+      </div>
+
+      <div class="form-group" *ngIf="addresses">
+        <label for="address" class="form-label">Adresse:</label>
+        <select formControlName="address" id="address" class="input">
+          <option value="" disabled>Selectionner une adresse</option>
+          <option *ngFor="let address of addresses" [ngValue]="address">
+            {{ address.address_line1 }}, {{ address.address_line2 }}, {{ address.city }}
+          </option>
+        </select>
+        <div *ngIf="cellForm.controls['address'].hasError('required')"
+             class="form-text form-text--right form-text--danger">L'adresse de la cellule est obligatoire.
+        </div>
+      </div>
+
+    </form>
+  </app-my-modal>
+
+  <table class="table admin-cells__table" style="width: 100%">
     <tr>
       <th>Nom</th>
     </tr>

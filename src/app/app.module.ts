@@ -52,6 +52,7 @@ import { AdminComponent } from './components/pages/admin/admin.component';
 import { MyModalOpenDirective } from './directives/my-modal-open-directive.directive';
 import { MyModalComponent } from './components/my-modal/my-modal.component';
 import { MyModalService } from './services/my-modal/my-modal.service';
+import {AddressService} from './services/address.service';
 
 const appRoutes = [
   {
@@ -278,6 +279,7 @@ const appRoutes = [
     ParticipationService,
     CanActivateViaAuthGuard,
     CanAccessAdminPanelGuard,
+    AddressService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MyHttpInterceptor,

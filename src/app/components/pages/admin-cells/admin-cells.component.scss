@@ -5,4 +5,13 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__table{
+    margin-top: 10px;
+  }
 }

@@ -16,6 +16,7 @@ export const environment = {
     participations: '/volunteer/participations',
     profile: '/profile',
     tasktypes: '/volunteer/tasktypes',
-    users: '/users'
+    users: '/users',
+    address: '/location/addresses'
   }
 };

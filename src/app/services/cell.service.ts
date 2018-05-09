@@ -30,4 +30,14 @@ export class CellService extends GlobalService {
       {headers: headers}
     );
   }
+
+
+
+  createCell(body: string): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.post<any>(
+      this.url_cells,
+      body,
+      {headers: headers}    );
+  }
 }
