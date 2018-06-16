@@ -49,7 +49,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { PermissionDirective } from './directives/permission.directive';
 import { AdminComponent } from './components/pages/admin/admin.component';
-import { MyModalOpenDirective } from './directives/my-modal-open-directive.directive';
+import { MyModalOpenDirective } from './directives/my-modal-open.directive';
 import { MyModalComponent } from './components/my-modal/my-modal.component';
 import { MyModalService } from './services/my-modal/my-modal.service';
 

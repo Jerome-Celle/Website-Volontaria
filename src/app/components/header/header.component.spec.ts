@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { PermissionDirective } from '../../directives/permission.directive';
 
 import { HeaderComponent } from './header.component';
 
@@ -8,7 +9,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent,
+        PermissionDirective]
     })
     .compileComponents();
   }));
