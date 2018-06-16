@@ -1,14 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AdminEventComponent } from './admin-event.component';
+import {AppModule} from '../../../app.module';
 
-describe('MyScheduleComponent', () => {
+describe('AdminEventComponent', () => {
   let component: AdminEventComponent;
   let fixture: ComponentFixture<AdminEventComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AdminEventComponent ]
-    })
+    TestBed.configureTestingModule(
+      {imports: [AppModule] }
+    )
       .compileComponents();
   }));
 

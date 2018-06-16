@@ -14,7 +14,7 @@ import {ContactPageComponent} from '../contact-page/contact-page.component';
 import {TasktypeService} from '../../../services/tasktype.service';
 import {RouterModule} from '@angular/router';
 import {AuthenticationService} from '../../../services/authentication.service';
-import {DefaultIntl} from '../../../app.module';
+import {AppModule, DefaultIntl} from '../../../app.module';
 import {AdminCellComponent} from '../admin-cell/admin-cell.component';
 import {CanAccessAdminPanelGuard} from '../../../guards/CanAccessAdminPanelGuard';
 import {AdminLayoutComponent} from '../../../layouts/admin-layout/admin-layout.component';
@@ -61,76 +61,9 @@ describe('MyScheduleComponent', () => {
   let fixture: ComponentFixture<MySchedulePageComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        FooterComponent,
-        HeaderComponent,
-        HomePageComponent,
-        MySchedulePageComponent,
-        ActivitiesPageComponent,
-        ManageAccountPageComponent,
-        RegisterValidationComponent,
-        RegisterActivationComponent,
-        LoginPageComponent,
-        LogoutPageComponent,
-        ActivityConfirmationComponent,
-        AdminVolunteersComponent,
-        AdminCyclesComponent,
-        AdminCellsComponent,
-        AdminCellComponent,
-        AdminEventComponent,
-        AdminActivitiesComponent,
-        AdminActivityDetailComponent,
-        InfoPageComponent,
-        ContactPageComponent,
-        DocumentationComponent,
-        PageNotFoundComponent,
-        AdminLayoutComponent,
-        DefaultLayoutComponent,
-        LoginLayoutComponent,
-        PermissionDirective,
-        AdminComponent,
-        MyModalOpenDirective,
-        MyModalComponent,
-        MyTableComponent,
-        ForgotPasswordComponent,
-        ForgotPasswordConfirmationComponent,
-        ResetPasswordComponent,
-        MyBenevolometreComponent
-      ],
-      imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        RouterModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        SimpleNotificationsModule.forRoot(),
-        AngularMultiSelectModule,
-        OwlDateTimeModule,
-        OwlNativeDateTimeModule,
-        CalendarModule.forRoot()
-      ],
-      providers: [
-        UserService,
-        AuthenticationService,
-        EventService,
-        TasktypeService,
-        CycleService,
-        CellService,
-        ParticipationService,
-        CanActivateViaAuthGuard,
-        CanAccessAdminPanelGuard,
-        {
-          provide: HTTP_INTERCEPTORS,
-          useClass: MyHttpInterceptor,
-          multi: true,
-        },
-        {provide: OwlDateTimeIntl, useClass: DefaultIntl},
-        MyModalService
-      ],
-    })
+    TestBed.configureTestingModule(
+      {imports: [AppModule] }
+    )
       .compileComponents();
   }));
 

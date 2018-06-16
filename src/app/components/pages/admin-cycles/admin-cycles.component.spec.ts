@@ -1,14 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AdminCyclesComponent } from './admin-cycles.component';
+import {AppModule} from '../../../app.module';
 
-describe('MyScheduleComponent', () => {
+describe('AdminCyclesComponent', () => {
   let component: AdminCyclesComponent;
   let fixture: ComponentFixture<AdminCyclesComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AdminCyclesComponent ]
-    })
+    TestBed.configureTestingModule(
+      {imports: [AppModule] }
+    )
       .compileComponents();
   }));
 

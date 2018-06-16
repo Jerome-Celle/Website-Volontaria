@@ -63,6 +63,7 @@ import { CalendarModule } from 'angular-calendar';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { MyBenevolometreComponent } from './components/my-benevolometre/my-benevolometre.component';
+import {APP_BASE_HREF} from '@angular/common';
 
 registerLocaleData(localeFr);
 
@@ -336,7 +337,8 @@ export class DefaultIntl {
       multi: true,
     },
     {provide: OwlDateTimeIntl, useClass: DefaultIntl},
-    MyModalService
+    MyModalService,
+    {provide: APP_BASE_HREF, useValue : '/' },
   ],
   bootstrap: [AppComponent]
 })

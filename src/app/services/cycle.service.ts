@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, Provider} from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
