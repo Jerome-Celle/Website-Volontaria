@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PermissionDirective } from '../../directives/permission.directive';
 
 import { HeaderComponent } from './header.component';
+import {UserService} from '../../services/user.service';
+import {AuthenticationService} from '../../services/authentication.service';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -10,7 +13,14 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeaderComponent,
-        PermissionDirective]
+        PermissionDirective,
+      ],
+      imports: [
+        HttpClientModule,
+      ],
+      providers: [
+        AuthenticationService,
+      ]
     })
     .compileComponents();
   }));
